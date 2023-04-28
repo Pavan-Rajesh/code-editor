@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+    <div class="register-container">
+        <div class="register-image"></div>
+
+        <div class="register-details-wrapper">
+            <div class="company-banner-container">
+                <div class="company-name">CodeCraft - register</div>
+            </div>
+            <form action="/register" method="POST">
+                <div class="register-input-container">
+                    <div class="input-field-container">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div class="input-field-container">
+                        <label for="registerEmail">email:</label>
+                        <input type="email" name="registerEmail" id="registerEmail">
+                    </div>
+                    <div class="input-field-container">
+                        <label for="registerPassword">Password:</label>
+                        <input type="password" name="registerPassword" id="registerPassword">
+                    </div>
+                    <div class="input-field-container">
+                        <label for="confirmpassword">Confirm Password:</label>
+                        <input type="password" name="confirmpassword" id="confirmpassword">
+                    </div>
+                    <div class="forgot-register">
+                        <button type="button" id="login">Login</button>
+                        <button type="submit" id="">Register</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+    <script src="js/register.js"></script>
+</body>
+
+</html>

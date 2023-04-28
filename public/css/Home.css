@@ -1,0 +1,379 @@
+body {
+    margin: 0;
+    background-color: lightblue;
+    min-height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+    padding: 10px;
+    font-family: 'DynaPuff', cursive;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline;
+    margin: 20px;
+}
+
+nav ul li:hover {
+    cursor: pointer
+}
+
+.company-logo {
+    width: 30px;
+    height: 30px;
+}
+
+.company-name {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.main-title-heading {
+    font-size: 100px;
+    font-family: 'DynaPuff', cursive;
+    font-weight: 700;
+}
+
+.main-title-caption {
+    font-size: 50px;
+    font-family: 'DynaPuff', cursive;
+    font-weight: 400;
+}
+
+.main-home-body {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* flex-direction: column; */
+    min-height: 70vh;
+}
+
+.sponge-bob {
+    width: 350px;
+    height: 200px;
+}
+
+.testimonials {
+    margin-top: 150px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.options-image {
+    width: 230px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.card {
+    width: 30%;
+    height: 300px;
+    background-color: rgb(134, 188, 209);
+    margin: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.themes-image {
+    width: 200px;
+    height: 200px;
+}
+
+
+.languages-image {
+    width: 320px;
+    height: 220px;
+}
+
+.card-title {
+    font-family: 'DynaPuff', cursive;
+    font-size: 30px;
+}
+
+.image-and-caption {
+    width: 100%;
+    height: 50vh;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.image-caption {
+    font-size: 2em;
+    font-family: 'Dynapuff', cursive;
+
+}
+
+.looking-text {
+    font-family: 'Dynapuff', cursive;
+    font-size: 55px;
+    ;
+}
+
+.looking-for {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+    flex-direction: row;
+    font-family: 'Dynapuff', cursive;
+}
+
+.footer-group {
+
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+.footer-group-2 {
+    margin-top: 30px;
+
+}
+
+.footer-title {
+    font-size: 40px;
+    font-family: 'Dynapuff',
+        cursive;
+}
+
+#email {
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    outline: none;
+    width: 300px;
+}
+
+#email-label {
+    font-size: 30px;
+    font-family: 'Dynapuff',
+        cursive;
+
+
+}
+
+.footer-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.email-container {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.footer-right ul {
+    display: grid;
+    grid-template-areas: "a a"
+        "b c";
+    grid-gap: 40px;
+    ;
+
+}
+
+.jump-heading {
+    grid-area: a;
+    font-size: 40px;
+}
+
+.footer-right ul :nth-child(2) {
+    grid-area: b;
+    background-color: rgb(19, 174, 19);
+}
+
+.footer-right ul :nth-child(3) {
+    grid-area: c;
+    background-color: rgb(56, 44, 134);
+
+}
+
+.footer-right ul li {
+    list-style: none;
+    width: 150px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: white
+}
+
+.footer-right ul li:hover {
+    cursor: pointer
+}
+
+.footer-right {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width:1000px) and (min-width:750px) {
+    .main-title-heading {
+        font-size: 62px;
+
+    }
+
+    .main-home-body {
+        justify-content: space-around;
+        min-height: 50vh;
+    }
+
+    .main-title-caption {
+        font-size: 30px;
+    }
+
+    .main-title {
+        display: flex;
+        justify-content: center;
+        align-content: flex-end;
+
+
+        flex-wrap: wrap;
+    }
+
+    .sponge-bob {
+        width: 300px;
+        height: 150px;
+    }
+
+    .testimonials {
+        flex-direction: column;
+    }
+
+    ul {
+        display: inline-block;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .looking-text {
+        font-size: 40px;
+    }
+
+    .image-and-caption {
+        flex-direction: column;
+    }
+
+    .c2 {
+        flex-direction: column-reverse;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-right {
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width:755px) and (min-width:400px) {
+    .main-title-heading {
+        font-size: 70px;
+    }
+
+    .sponge-bob {
+        display: none;
+    }
+
+    .main-title-caption {
+        font-size: 40px;
+
+    }
+
+    ul {
+        display: inline;
+    }
+
+    .main-home-body {
+        min-height: 50vh;
+    }
+
+    .main-title {
+        padding: 20px;
+    }
+
+    .testimonials {
+        flex-direction: column;
+
+    }
+
+    .card {
+        width: 70%;
+    }
+
+    .looking-text {
+        font-size: 30px;
+        margin-left: 80px;
+
+    }
+
+    .looking-for {
+        width: 70%;
+    }
+
+    .image-and-caption {
+        flex-direction: column;
+    }
+
+    .image-caption {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+    }
+
+    .codeEditor {
+        width: 350px;
+        height: auto;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    .footer-title {
+        font-size: 20px;
+
+        margin-left: 40px;
+    }
+
+    #email-label {
+        font-size: 20px;
+        ;
+
+    }
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Code Craft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/terminal" rel="stylesheet">
+    <link rel="stylesheet" href="css/codeEditorhome.css">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <img src="./images/favicon.ico" alt="logo" class="company-logo">
+                <span class="company-name">CodeCraft</span>
+            </li>
+
+        </ul>
+        <ul>
+            <li>Editor</li>
+        </ul>
+    </nav>
+
+    <div class="editor-main-header">
+        <div class="editor-title">
+            Craft your code here!
+        </div>
+        <div class="options">
+            <div>
+                <label for="language">Choose a Language</label>
+                <select id="language" name="language">
+                    <option value="kotlin">kotlin</option>
+                    <option value="c_cpp">C++</option>
+                    <option value="python">Python</option>
+                    <option value="java">java</option>
+                    <option value="sql">sql</option>
+                    <option value="golang">golang</option>
+                    <option value="csharp">c#</option>
+                    <option value="objectivec">objc</option>
+                    <option value="swift">swift</option>
+                    <option value="rust">rust</option>
+                    <option value="php">php</option>
+                </select>
+            </div>
+            <!-- ---------------------------------------- -->
+            <div id="settings-toggler">Settings</div>
+            <div id="settings">
+
+                <div class="theme">
+                    <label for="theme">select a setTheme</label>
+                    <select id="theme" name="theme">
+
+                        <!-- <option value="github">Github</option>
+        <option value="textmate">textmate</option> -->
+
+                        <option value="chaos">chaos</option>
+                        <option value="clouds">Clouds</option>
+                        <option value="eclipse">Eclipse</option>
+                        <option value="clouds">Clouds</option>
+                        <option value="xcode">xcode</option>
+                        <option value="clouds">Clouds</option>
+                        <option value="monokai">monokai</option>
+                        <option value="clouds">Clouds</option>
+
+                    </select>
+                </div>
+
+                <div class='font-size'>
+                    <label for="font-size">Font-size</label>
+                    <input type="number" id="font-size">
+                    <div> <button type="button" id="configure">Configure</button></div>
+                </div>
+            </div>
+            <!-- ---------------------------------------- -->
+            <div class="compile-button">
+                <button id="compile">compile</button>
+                <button id="save">save</button>
+                <button id="logout">logout</button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div id="question"></div>
+    <div class="editor-markdown">
+        <div class="editor-container">
+            <div id="editor">
+                <%=data.code%>
+            </div>
+        </div>
+        <div class="markdown-container">
+
+            <div class="markdown-controls">
+                <h3>MarkDown</h3>
+
+            </div>
+            <div id="markdown">
+                <textarea name="markdown-text" id="markdown-text"><%=data.markDown%></textarea>
+                <div id="output-markdown"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="output-container">
+        <h3>Output goesHere</h3>
+        <div class="output" id="output">
+        </div>
+    </div>
+    <div class="question-container">
+        <div class="question">
+            llitia ipsum, dignissimos voluptatibus facere maiores dolorum,
+            vero accusamus repellat vel placeat? Reprehenderit aspernatur inventore explicabo similique, officiis ad
+            cupiditate commodi cumque!
+            Tems alias earum eveniet ab quam aut laborum?
+            Unde dolor beatae temporibus quia officiis minima ipsa non fugiat dicta fuga commodi necessitatibus tempora
+            ab,
+            rem autem nemo natus qui ea tenetur repellendus in. Error magnam vel consequatur aliquid?
+            Et aspernatur molestiae atque officia illum, nesciunt iure delectus enim cumque. Dignissimos possimus
+            tempore
+            maiores libero commodi cupiditate, ratione nisi quae neque non eligendi placeat labore quia nam asperiores
+            nihil.
+            Dicta, blanditiis. Voluptatibus rerum sapiente cumque recusandae nihil, soluta itaque culpa vitae quam
+            aliquid
+            voluptates adipisci fugiat error eaque modi, eligendi labore optio quas dolores fuga esse natus ducimus
+            amet?
+            Numquam nostrum fuga dolor laborum, ea omnis, natus ab accusantium aperiam voluptatibus rem quos suscipit
+            nam
+            mollitia nulla quaerat? Consequatur reiciendis quae debitis recusandae iusto aut cum. Iusto, est natus?
+            Ab animi magnam voluptatum tenetur nemo assumenda accusamus, quam reprehenderit cum quod quisquam officia
+            commodi. Repellendus fugiat ratione minus harum unde eligendi tempora eveniet deserunt ut nesciunt,
+            laboriosam
+            illo quis.
+            Sint beatae veniam ad eum vero tempore similique fugiat placeat! Optio laborum dignissimos quidem at,
+            voluptatum
+            tempora necessitatibus nobis illum architecto quae aut dolor. Alias praesentium harum eos itaque autem!
+            Corporis alias deleniti laborum expedita impedit exercitationem autem blanditiis, tempore consequatur
+            accusantium, amet quod laboriosam nisi rem ullam porro modi! Ipsa consequuntur possimus aliquam, rem a
+            soluta?
+            Repellat, ducimus ut.
+            Ducimus vel eveniet odio dolores at earum nulla quam consectetur nisi sint, reiciendis magnam explicabo
+            temporibus natus eligendi numquam cumque quo libero amet doloremque aperiam et voluptatem obcaecati
+            perferendis.
+            Nisi?
+            Odit officia, at explicabo iste delectus illum animi dolorem porro nemo autem rem saepe quo adipisci facere
+            quidem similique temporibus blanditiis! Iusto autem aperiam rerum corrupti, magni quidem in explicabo.
+            Consequatur reiciendis fugiat, qui tenetur quis ut totam perspiciatis tempora veritatis laudantium eum optio
+            recusandae ullam excepturi ipsum quisquam mollitia blanditiis suscipit. Quod quas quo nemo excepturi
+            voluptate
+            quibusdam. Omnis?
+            Eos soluta minus laboriosam est tempora quia aliquam quibusdam saepe cupiditate. Laudantium dolorem illum
+            molestiae autem. Praesentium quibusdam commodi debitis repudiandae dolorum at animi? Ad veniam beatae sit
+            temporibus obcaecati.
+            Reprehenderit corporis a amet optio ex accusamus, quidem id architecto praesentium velit at voluptates.
+            Nobis id
+            tenetur obcaecati cum, itaque nihil eligendi, dicta voluptatum ipsa dolor molestias possimus. Nihil, quis!
+            Asperiores, laborum praesentium amet provident nulla quas facilis nam sunt exercitationem consequuntur a eos
+            odio totam ipsum nemo in facere aperiam distinctio aliquam voluptates nesciunt. Doloremque ipsa officia odio
+            molestias.
+            Quidem maiores repellendus ipsa ab aperiam, similique hic dolorem doloremque quaerat consequuntur ratione
+            atque
+            corporis praesentium dolorum molestias ullam aspernatur cupiditate unde itaque voluptatum impedit nobis at
+            laudantium! Odio, vero?
+            Pariatur aut in ducimus eaque sint exercitationem fuga quibusdam dolor, odio quas est reprehenderit
+            accusamus
+            suscipit repellendus quo? Repellendus voluptatem vel doloribus sequi corrupti laborum enim similique,
+            ducimus
+            ratione minus.
+            Rem veritatis facilis nam voluptatibus in quis odio ipsam a corrupti, nulla, exercitationem numquam aperiam
+            magni harum quibusdam doloremque, similique velit totam dolorum omnis aspernatur sed facere. Quibusdam, ea
+            odit?
+            Incidunt dolorem accusamus libero maiores obcaecati, velit autem odio quaerat veritatis architecto vel quas
+            nesciunt, iure est ipsam ab ex magni iste provident rerum esse quam voluptatum nihil fugiat! Laudantium.
+
+            eaque quos, veniam facere illo, similique necessitatibus culpa cum quo quibusdam explicabo omnis. Iure, ab
+            quibusdam.
+            Rerum beatae distinctio harum at quos amet temporibus aspernatur fuga molestiae, deleniti explicabo quia in
+            ea
+            unde voluptatibus nisi inventore eligendi iste adipisci accusantium non nostrum similique. Id, deleniti
+            doloribus.
+        </div>
+    </div>
+    <script src="js/ace-builds-master/src-noconflict/ace.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/codeEditorhome.js">
+
+    </script>
+</body>
+
+</html>

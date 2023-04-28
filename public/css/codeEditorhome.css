@@ -1,0 +1,274 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+
+    background-color: black;
+    color: white;
+    font-family: 'DynaPuff', cursive;
+    position: relative;
+}
+
+
+
+.company-logo {
+    width: 30px;
+    height: 30px;
+}
+
+.company-name {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+    font-family: 'DynaPuff', cursive;
+    align-items: center;
+    padding: 15px
+}
+
+nav ul li {
+    list-style: none;
+    display: inline;
+    margin: 20px;
+}
+
+
+nav ul li:hover {
+    cursor: pointer
+}
+
+.options {
+    width: 100%;
+    height: auto;
+    padding: 15px 0;
+    background-color: lightblue;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: black
+}
+
+.editor-title {
+    font-family: 'DynaPuff', cursive;
+    font-size: 20px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black
+}
+
+
+.editor-main-header {
+    width: 100%;
+    height: auto;
+    padding: 5px 0;
+    background-color: lightblue;
+    display: flex;
+    justify-content: space-between;
+}
+
+.editor-markdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.editor-container {
+    width: 50vw;
+    height: 80vh;
+    /* background-color: hotpink; */
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+
+#editor {
+    width: 90%;
+    height: 100%;
+}
+
+.markdown-container {
+    width: 50vw;
+    height: 80vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: black
+}
+
+#markdown-text {
+    padding: 10px;
+
+    width: 100%;
+    height: 50%;
+    resize: none;
+    outline: none;
+}
+
+#output-markdown {
+    padding: 10px;
+
+    width: 100%;
+    height: 50%;
+    background-color: white;
+    border: 1px solid black;
+    overflow: scroll;
+}
+
+#markdown {
+    width: 90%;
+    height: 100%;
+    background-color: lightblue;
+    padding: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.output-container {
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    font-family: 'Terminal', sans-serif;
+}
+
+
+
+.output {
+    width: 95%;
+    height: 38vh;
+    background-color: rgb(111, 111, 111);
+    margin: 20px;
+    color: white;
+    font-family: 'Terminal', sans-serif;
+    padding: 50px;
+    font-size: 30px;
+}
+
+.markdown-controls {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 7vh;
+    background-color: yellowgreen;
+}
+
+.question-container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: lightcoral;
+    top: -66.8%;
+    padding: 20px;
+    z-index: 99;
+}
+
+.question:before {
+    content: "Question";
+    width: 100px;
+    height: 40px;
+    background-color: green;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 60%);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px;
+    z-index: 98;
+
+}
+
+
+
+button {
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-left: 20px;
+    border: none;
+    outline: none;
+    font-family: 'DynaPuff', cursive;
+    box-shadow: 2px 2px black;
+}
+
+button:active {
+    box-shadow: none;
+}
+
+
+#language {
+    padding: 5px 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    margin: 8px 5px;
+    font-family: 'DynaPuff', cursive;
+
+}
+
+
+
+
+#language button:hover {
+    cursor: pointer;
+}
+
+#settings {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    background-color: yellowgreen;
+    display: none;
+    margin-top: 250px;
+    padding: 20px;
+
+    z-index: 999;
+    border-radius: 20px;
+}
+
+
+.show {
+    display: block;
+}
+
+.theme,
+.font-size {
+    margin: 10px;
+}
+
+#configure {
+    margin-top: 20px;
+}
+
+#settings-toggler:hover,
+#configure:hover {
+    cursor: pointer;
+}
+
+#output {
+    color: white
+}

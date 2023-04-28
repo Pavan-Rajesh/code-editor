@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-image"></div>
+        <div class="login-details-wrapper">
+            <div class="company-banner-container">
+                <div class="company-name">CodeCraft - Login</div>
+            </div>
+            <form action="/login" method="POST">
+                <div class="login-input-container">
+                    <div class="input-field-container">
+                        <label for="name">name:</label>
+                        <input type="name" name="name" id="loginEmail">
+                    </div>
+                    <div class="input-field-container">
+                        <label for="registerPassword">Password:</label>
+                        <input type="password" name="registerPassword" id="loginPassword">
+                    </div>
+                    <div class="forgot-register">
+                        <!-- <button type="button">Forgot password</button> -->
+                        <button type="button" id="register">Register</button>
+                        <button type="submit" id="">Login</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

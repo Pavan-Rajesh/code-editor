@@ -1,0 +1,13 @@
+{
+  "java": "java",
+  "c_cpp": "cpp17",
+  "php": "php",
+  "python": "python3",
+  "golang": "go",
+  "sql": "sql",
+  "csharp": "csharp",
+  "objectivec": "obc",
+  "swift": "swift",
+  "rust": "rust",
+  "kotlin": "kotlin"
+}
