@@ -6,9 +6,17 @@ const isAuth = require("../authentication/authMiddleWare").isAuth;
 
 //here isAuth is a middleware that is responsible for authenticating a user
 router.get("/", isAuth, (req, res) => {
-  res.render("cards", {
-    // data: cards,
-  });
+  allCodes
+    .find({})
+    .then((data) => {
+      // console.log(data);
+      res.render("cards", {
+        code: data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 module.exports = router;

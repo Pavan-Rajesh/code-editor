@@ -10,7 +10,7 @@ const fontSize = document.getElementById("font-size");
 const compile = document.getElementById("compile");
 const output = document.getElementById("output");
 const save = document.getElementById("save");
-
+const programName = document.getElementById("codeName");
 const markedText = document.getElementById("markdown-text");
 const markdownArea = document.getElementById("markdown");
 const outputMarkdownArea = document.getElementById("output-markdown");
@@ -73,6 +73,7 @@ save.addEventListener("click", (e) => {
     code: usercode,
     language: language.value,
     markdown: markedText.value,
+    codeName: programName.value,
   };
   const url = window.location.href;
   const requrl = url.split("/");

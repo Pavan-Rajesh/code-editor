@@ -33,7 +33,7 @@
 
         </ul>
         <ul>
-            <button class="write-new">Write New</button>
+            <button class="write-new" onclick="window.location.href='/letscode'">Write New</button>
             <button class="log-out view">LogOut</button>
             <li>Blogs</li>
         </ul>
@@ -42,113 +42,30 @@
 
 
     <div class="wrapper">
-        <div class="card-container">
-            <div class="arrows-container">
-                <div class="up">
-                    <i class="fa-solid fa-arrow-up arrow-symbol"></i>
+        <% for(let i=0; i < code.length; i++) {%>
+            <div class="card-container">
+                <div class="arrows-container">
+                    <div class="up">
+                        <i class="fa-solid fa-arrow-up arrow-symbol"></i>
+                    </div>
+                    <div class="down"><i class="fa-solid fa-arrow-down arrow-symbol"></i></div>
                 </div>
-                <div class="down"><i class="fa-solid fa-arrow-down arrow-symbol"></i></div>
-            </div>
-            <div class="questions-container">
-                <div class="question">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat possimus et
-                    dicta
-                    perferendis maiores laudantium sunt ex alias voluptatem cum.</div>
-                <div class="actions">
-                    <div class="language-container">Language: Python</div>
-                    <button class="view" type="button">View Problem</button>
+                <div class="questions-container">
+                    <div class="question">
+                        <%=code[i].nameOfthecode%>
+                    </div>
+                    <div class="actions">
+                        <div class="language-container">authorName:<%=code[i].authorName%>
+                        </div>
+                        <button class="view" type="button">View code</button>
 
+                    </div>
                 </div>
             </div>
-        </div>
+            <% }%>
 
 
 
-        <!-- -------------------------------------------------------------------------------------------- -->
-        <div class="card-container">
-            <div class="arrows-container">
-                <div class="up">
-                    <i class="fa-solid fa-up up-arrow"></i>
-                </div>
-                <div class="down"></div>
-            </div>
-            <div class="questions-container">
-                <div class="question">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat possimus et
-                    dicta
-                    perferendis maiores laudantium sunt ex alias voluptatem cum.</div>
-                <div class="actions">
-                    <div class="language-container">Language: Python</div>
-                    <button class="view" type="button">View Problem</button>
-                </div>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="arrows-container">
-                <div class="up">
-                    <i class="fa-solid fa-up up-arrow"></i>
-                </div>
-                <div class="down"></div>
-            </div>
-            <div class="questions-container">
-                <div class="question">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat possimus et
-                    dicta
-                    perferendis maiores laudantium sunt ex alias voluptatem cum.</div>
-                <div class="actions">
-                    <div class="language-container">Language: Python</div>
-                    <button class="view" type="button">View Problem</button>
-                </div>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="arrows-container">
-                <div class="up">
-                    <i class="fa-solid fa-up up-arrow"></i>
-                </div>
-                <div class="down"></div>
-            </div>
-            <div class="questions-container">
-                <div class="question">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat possimus et
-                    dicta
-                    perferendis maiores laudantium sunt ex alias voluptatem cum.</div>
-                <div class="actions">
-                    <div class="language-container">Language: Python</div>
-                    <button class="view" type="button">View Problem</button>
-                </div>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="arrows-container">
-                <div class="up">
-                    <i class="fa-solid fa-up up-arrow"></i>
-                </div>
-                <div class="down"></div>
-            </div>
-            <div class="questions-container">
-                <div class="question">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat possimus et
-                    dicta
-                    perferendis maiores laudantium sunt ex alias voluptatem cum.</div>
-                <div class="actions">
-                    <div class="language-container">Language: Python</div>
-                    <button class="view" type="button">View Problem</button>
-                </div>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="arrows-container">
-                <div class="up">
-                    <i class="fa-solid fa-up up-arrow"></i>
-                </div>
-                <div class="down"></div>
-            </div>
-            <div class="questions-container">
-                <div class="question">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat possimus et
-                    dicta
-                    perferendis maiores laudantium sunt ex alias voluptatem cum.</div>
-                <div class="actions">
-                    <div class="language-container">Language: Python</div>
-                    <button class="view" type="button">View Problem</button>
-                </div>
-            </div>
-        </div>
     </div>
 </body>
 

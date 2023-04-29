@@ -12,7 +12,11 @@ body {
     position: relative;
 }
 
-
+#codeName {
+    padding: 5px;
+    border-radius: 10px;
+    font-family: 'DynaPuff', cursive;
+}
 
 .company-logo {
     width: 30px;

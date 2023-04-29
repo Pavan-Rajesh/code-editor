@@ -70,14 +70,13 @@ router.post("/save", (req, res) => {
   switch (req.body.language) {
     case "python":
       const newPython = new python({
-        nameOfthecode: "let it be python",
+        nameOfthecode: req.body.codeName,
         code: req.body.code,
         markDown: req.body.markdown,
         author: req.user._id,
       });
       const mixCodes = new allCodes({
-        nameOfthecode: "let it be python",
-
+        nameOfthecode: req.body.codeName,
         code: req.body.code,
         authorName: req.user.username,
         markDown: req.body.markdown,
@@ -104,8 +103,7 @@ router.post("/save", (req, res) => {
       break;
     case "php":
       const newPhp = new php({
-        nameOfthecode: "let it be php",
-
+        nameOfthecode: req.body.codeName,
         code: req.body.code,
         author: req.user._id,
       });
@@ -115,6 +113,21 @@ router.post("/save", (req, res) => {
           res.json("successfully saved");
         })
         .catch((err) => {
+          console.log(err);
+        });
+      const mixphp = new allCodes({
+        nameOfthecode: req.body.codeName,
+        code: req.body.code,
+        authorName: req.user.username,
+        markDown: req.body.markdown,
+        author: req.user._id,
+      });
+      mixphp
+        .save()
+        .then((data) => {
+          console.log("successfull saved");
+        })
+        .catch((error) => {
           console.log(err);
         });
       break;
