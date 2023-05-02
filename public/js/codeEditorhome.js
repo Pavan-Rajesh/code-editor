@@ -31,11 +31,11 @@ editor.setOptions({
 editor.setTheme(`${aceTheme}` + "chaos");
 //configuring the editor with the user needs
 configure.addEventListener("click", (e) => {
-  console.log(theme.value);
-  console.log(language.value);
+  // console.log(theme.value);
+  // console.log(language.value);
   editor.setTheme(`${aceTheme}` + theme.value);
   editor.session.setMode(`${aceLanguage}` + language.value);
-  console.log(fontSize.value);
+  // console.log(fontSize.value);
   editor.setFontSize(parseInt(fontSize.value));
   settingsOpener.style.display = "none";
 });

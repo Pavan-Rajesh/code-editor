@@ -4,9 +4,13 @@ const allCodes = require("../models/allCodes");
 const python = require("../models/python");
 router.get("/", (req, res) => {
   const userId = req.user._id;
-  python
-    .find({ author: userId })
+  console.log(userId);
+  allCodes
+    .find({ userId: req.user._id })
+    .populate("code")
+    // .find({ author: userId })
     .then((data) => {
+      console.log(data);
       res.render("userCode", {
         codes: data,
       });

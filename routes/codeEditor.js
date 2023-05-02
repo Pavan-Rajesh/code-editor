@@ -7,7 +7,11 @@ const python = require("../models/python");
 const php = require("../models/php");
 const allCodes = require("../models/allCodes.js");
 const languagesJson = require("./languageCodes.json");
-
+const kotlin = require("../models/kotlin.js");
+const java = require("../models/java.js");
+const sql = require("../models/sql.js");
+const golang = require("../models/golang.js");
+const csharp = require("../models/csharp.js");
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 
@@ -66,74 +70,139 @@ router.post("/", (req, res) => {
   );
 });
 
-router.post("/save", (req, res) => {
+router.post("/save", async (req, res) => {
   switch (req.body.language) {
     case "python":
       const newPython = new python({
         nameOfthecode: req.body.codeName,
+        language: req.body.language,
         code: req.body.code,
         markDown: req.body.markdown,
         author: req.user._id,
       });
-      const mixCodes = new allCodes({
-        nameOfthecode: req.body.codeName,
-        code: req.body.code,
-        authorName: req.user.username,
-        markDown: req.body.markdown,
-        author: req.user._id,
+      const newCode = await newPython.save();
+      const savedCodes = new allCodes({
+        userId: req.user._id,
+        code: newCode._id,
+        upvotes: 0,
+        downvotes: 0,
+        docModel: req.body.language,
       });
-      mixCodes
-        .save()
-        .then((data) => {
-          console.log("successfull saved");
-        })
-        .catch((error) => {
-          console.log(err);
-        });
-      newPython
-        .save()
-        .then((data) => {
-          console.log("successfully saved");
-          res.json("successfully saved");
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-
+      savedCodes.save();
       break;
+
+    // python saving ends here php starts
+    // -----------------------------------------
     case "php":
       const newPhp = new php({
         nameOfthecode: req.body.codeName,
+        language: req.body.language,
         code: req.body.code,
-        author: req.user._id,
-      });
-      newPhp
-        .save()
-        .then((data) => {
-          res.json("successfully saved");
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-      const mixphp = new allCodes({
-        nameOfthecode: req.body.codeName,
-        code: req.body.code,
-        authorName: req.user.username,
         markDown: req.body.markdown,
         author: req.user._id,
       });
-      mixphp
-        .save()
-        .then((data) => {
-          console.log("successfull saved");
-        })
-        .catch((error) => {
-          console.log(err);
-        });
+      const savephp = await newPhp.save();
+      const allphp = new allCodes({
+        userId: req.user._id,
+        code: savephp._id,
+        upvotes: 0,
+        downvotes: 0,
+        docModel: req.body.language,
+      });
+      allphp.save();
+      break;
+    case "kotlin":
+      const newKotlin = new kotlin({
+        nameOfthecode: req.body.codeName,
+        language: req.body.language,
+        code: req.body.code,
+        markDown: req.body.markdown,
+        author: req.user._id,
+      });
+      const savekotlin = await newKotlin.save();
+      const allKotlin = new allCodes({
+        userId: req.user._id,
+        code: savekotlin._id,
+        upvotes: 0,
+        downvotes: 0,
+        docModel: req.body.language,
+      });
+      allKotlin.save();
+      break;
+    case "java":
+      const newJava = new java({
+        nameOfthecode: req.body.codeName,
+        language: req.body.language,
+        code: req.body.code,
+        markDown: req.body.markdown,
+        author: req.user._id,
+      });
+      const savejava = await newJava.save();
+      const alljava = new allCodes({
+        userId: req.user._id,
+        code: savejava._id,
+        upvotes: 0,
+        downvotes: 0,
+        docModel: req.body.language,
+      });
+      alljava.save();
+      break;
+    case "sql":
+      const newSql = new sql({
+        nameOfthecode: req.body.codeName,
+        language: req.body.language,
+        code: req.body.code,
+
+        markDown: req.body.markdown,
+        author: req.user._id,
+      });
+      const savesql = await newSql.save();
+      const allsql = new allCodes({
+        userId: req.user._id,
+        code: savesql._id,
+        upvotes: 0,
+        downvotes: 0,
+        docModel: req.body.language,
+      });
+      allsql.save();
+      break;
+    case "golang":
+      const newgoLang = new golang({
+        nameOfthecode: req.body.codeName,
+        language: req.body.language,
+        code: req.body.code,
+        markDown: req.body.markdown,
+        author: req.user._id,
+      });
+      const savegolang = await newgoLang.save();
+      const allgolang = new allCodes({
+        userId: req.user._id,
+        code: savegolang._id,
+        upvotes: 0,
+        downvotes: 0,
+        docModel: req.body.language,
+      });
+      allgolang.save();
+      break;
+    case "csharp":
+      const newcSharp = new csharp({
+        nameOfthecode: req.body.codeName,
+        language: req.body.language,
+        code: req.body.code,
+        markDown: req.body.markdown,
+        author: req.user._id,
+      });
+      const savecsharp = await newcSharp.save();
+      const allcsharp = new allCodes({
+        userId: req.user._id,
+        code: savecsharp._id,
+        upvotes: 0,
+        downvotes: 0,
+        docModel: req.body.language,
+      });
+      allcsharp.save();
       break;
   }
 });
-
 //----------------------------------------------------------------
-
 module.exports = router;

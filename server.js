@@ -31,6 +31,8 @@ const invalidLogin = require("./routes/wrongPassword");
 const userCodes = require("./routes/userCodes");
 //edit route
 const edit = require("./routes/edit");
+//delete route
+const deleteCode = require("./routes/delete");
 // -------------------------------------------- end of routes
 
 const app = express();
@@ -79,6 +81,7 @@ app.use("/logout", logout);
 app.use("/wrongPassword", invalidLogin);
 app.use("/usercodes", userCodes);
 app.use("/edit", edit);
+app.use("/delete", deleteCode);
 //base routes ---------------------------------------------------------------- that means these routes will be preced by the double quoted strings in the above ones
 
 // listening on port

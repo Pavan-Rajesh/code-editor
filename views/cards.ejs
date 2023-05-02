@@ -34,7 +34,7 @@
         </ul>
         <ul>
             <button class="write-new" onclick="window.location.href='/letscode'">Write New</button>
-            <button class="log-out view">LogOut</button>
+            <button class="log-out view" onclick="window.location.href='/logout'">LogOut</button>
             <li>Blogs</li>
         </ul>
 
@@ -45,17 +45,19 @@
         <% for(let i=0; i < code.length; i++) {%>
             <div class="card-container">
                 <div class="arrows-container">
-                    <div class="up">
+                    <div class="up" onclick="upvote('<%=code[i]._id%>')">
                         <i class="fa-solid fa-arrow-up arrow-symbol"></i>
                     </div>
-                    <div class="down"><i class="fa-solid fa-arrow-down arrow-symbol"></i></div>
+                    <div class="down" onclick="downvote('<%=code[i]._id%>')"><i
+                            class="fa-solid fa-arrow-down arrow-symbol"></i>
+                    </div>
                 </div>
                 <div class="questions-container">
                     <div class="question">
-                        <%=code[i].nameOfthecode%>
+                        <%=code[i].code.nameOfthecode%>
                     </div>
                     <div class="actions">
-                        <div class="language-container">authorName:<%=code[i].authorName%>
+                        <div class="language-container">language:<%=code[i].code.language%>
                         </div>
                         <button class="view" type="button">View code</button>
 
@@ -63,10 +65,8 @@
                 </div>
             </div>
             <% }%>
-
-
-
     </div>
+    <script src="./js/cards.js"></script>
 </body>
 
 </html>

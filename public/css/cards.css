@@ -178,3 +178,8 @@ nav ul li:hover {
 .view:hover {
     cursor: pointer;
 }
+
+.up,
+.down:hover {
+    cursor: pointer
+}

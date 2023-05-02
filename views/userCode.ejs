@@ -14,18 +14,22 @@
         <div class="container">
             <div class="name-of-code">
                 <h3>
-                    <%=codes[i].nameOfthecode %>
+                    <%=codes[i].code.nameOfthecode %>
                 </h3>
             </div>
             <div>
-                <%= codes[i].code%>
+
             </div>
 
             <div class="edit-button">
-                <button type="button" data-id="<%=codes[i]._id%>" onclick="changeCode(this)">Edit</button>
+                <button type="button" data-id="<%=codes[i].code._id%>" data-language="<%=codes[i].code.language%>"
+                    onclick="changeCode(this)">Edit</button>
+                <button type="button" data-id="<%=codes[i].code._id%>" data-language="<%=codes[i].code.language%>"
+                    id="delete" onclick="deleteCode(this)">delete</button>
             </div>
-            <% }%>
-                <script src="js/userCodeJS.js"></script>
+        </div>
+        <% }%>
+            <script src="js/userCodeJS.js"></script>
 </body>
 
 </html>
