@@ -59,8 +59,8 @@
                     <div class="actions">
                         <div class="language-container">language:<%=code[i].code.language%>
                         </div>
-                        <button class="view" type="button">View code</button>
-
+                        <button class="view" type="button"
+                            onclick="window.location.href='/view?id=<%=code[i]._id%>'">View code</button>
                     </div>
                 </div>
             </div>

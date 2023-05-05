@@ -108,8 +108,22 @@ logOutButton.addEventListener("click", (e) => {
 });
 
 markedText.addEventListener("input", (e) => {
+  // console.log("writing");
+  write();
+});
+
+function write() {
   outputMarkdownArea.innerHTML = "";
   const html = marked.parse(markedText.value);
   outputMarkdownArea.innerHTML = html;
-  console.log("writing");
-});
+}
+
+if (window.location.pathname == "/view") {
+  editor.setReadOnly(true);
+  markedText.setAttribute("readonly", "true");
+  write();
+}
+
+if (window.location.pathname == "/edit") {
+  write();
+}

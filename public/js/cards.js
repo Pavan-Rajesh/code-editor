@@ -1,4 +1,5 @@
 function upvote(id) {
+  console.log("clicked upvote");
   data = {
     codeid: id,
   };
@@ -8,9 +9,14 @@ function upvote(id) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
-  });
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+    });
 }
 function downvote(id) {
+  console.log("clicked downvote");
   data = {
     codeid: id,
   };
@@ -20,5 +26,9 @@ function downvote(id) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
-  });
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+    });
 }

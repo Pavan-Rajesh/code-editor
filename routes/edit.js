@@ -3,7 +3,7 @@ const router = express.Router();
 const allCodes = require("../models/allCodes");
 const python = require("../models/python");
 router.get("/", function (req, res) {
-  console.log(req.query.id);
+  // console.log(req.query.id);
   allCodes
     .find({ code: req.query.id })
     .populate("code")
@@ -24,9 +24,9 @@ router.get("/", function (req, res) {
       ];
       const selectedLanguage = data[0].code.language;
       languageArray = [];
-      console.log(selectedLanguage);
+      // console.log(selectedLanguage);
       const index = myarray.indexOf(selectedLanguage);
-      console.log(index);
+      // console.log(index);
       for (let i = 0; i < myarray.length; i++) {
         if (i == index) {
           languageArray.push("selected");
@@ -34,7 +34,7 @@ router.get("/", function (req, res) {
           languageArray.push("");
         }
       }
-      console.log(languageArray);
+      // console.log(languageArray);
       const savedData = {
         code: data[0].code.code,
         markDown: data[0].code.markDown,
