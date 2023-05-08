@@ -10,20 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap" rel="stylesheet">
 
-
-
-
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/cards.css">
 </head>
 
 <body>
-
-
+    <div class="rainbow-image-container"><img src="images/rainbow.jpg" alt="" class="rainbow-image"></div>
     <nav>
         <ul>
             <li>
@@ -46,10 +37,16 @@
             <div class="card-container">
                 <div class="arrows-container">
                     <div class="up" onclick="upvote('<%=code[i]._id%>')">
-                        <i class="fa-solid fa-arrow-up arrow-symbol"></i>
+                        <img src="images/uparrowmod1.png" alt="" class="up-arrow">
+                        <div class="upvotenum" id="upvotenum<%=code[i]._id%>">
+                            <%=code[i].upvotes%>
+                        </div>
                     </div>
-                    <div class="down" onclick="downvote('<%=code[i]._id%>')"><i
-                            class="fa-solid fa-arrow-down arrow-symbol"></i>
+                    <div class="down" onclick="downvote('<%=code[i]._id%>')">
+                        <img src="images/uparrowmod1.png" alt="" class="down-arrow">
+                        <div class="downvotenum" id="downvotenum<%=code[i]._id%>">
+                            <%=code[i].downvotes%>
+                        </div>
                     </div>
                 </div>
                 <div class="questions-container">
@@ -57,10 +54,11 @@
                         <%=code[i].code.nameOfthecode%>
                     </div>
                     <div class="actions">
-                        <div class="language-container">language:<%=code[i].code.language%>
+                        <div class="language-container"><span class='language-label'>language:</span>
+                            <%=code[i].code.language%>
                         </div>
                         <button class="view" type="button"
-                            onclick="window.location.href='/view?id=<%=code[i]._id%>'">View code</button>
+                            onclick="window.location.href='/view?id=<%=code[i]._id%>'">View</button>
                     </div>
                 </div>
             </div>

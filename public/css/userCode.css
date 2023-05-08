@@ -2,14 +2,44 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
+
+
 body {
+    margin: 0;
     background-color: lightblue;
+    min-height: 100vh;
+}
+
+nav {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    font-weight: 400;
+    padding: 10px;
+    font-family: 'DynaPuff', cursive;
     align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline;
+    margin: 20px;
+}
+
+nav ul li:hover {
+    cursor: pointer
+}
+
+.company-logo {
+    width: 30px;
+    height: 30px;
+}
+
+.company-name {
+    font-size: 30px;
+    margin-left: 10px;
 }
 
 .container {

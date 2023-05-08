@@ -1,5 +1,6 @@
 const aceLanguage = "ace/mode/";
 const aceTheme = "ace/theme/";
+
 //requiring the buttons for setting the editor
 const settings = document.getElementById("settings-toggler");
 const settingsOpener = document.getElementById("settings");
@@ -43,6 +44,13 @@ configure.addEventListener("click", (e) => {
 language.addEventListener("change", (e) => {
   editor.session.setMode(`${aceLanguage}` + e.target.value);
 });
+function displaymsg() {
+  iziToast.show({
+    title: "success",
+    message: "successfully saved",
+    backgroundColor: "#99ff99",
+  });
+}
 
 compile.addEventListener("click", (e) => {
   const usercode = editor.getSession().getValue();
@@ -77,7 +85,7 @@ save.addEventListener("click", (e) => {
   };
   const url = window.location.href;
   const requrl = url.split("/");
-  console.log(requrl[requrl.length - 1]);
+  // console.log(requrl[requrl.length - 1]);
   if (requrl[requrl.length - 1] == "letscode") {
     fetch("/letscode/save", {
       method: "POST",
@@ -87,9 +95,11 @@ save.addEventListener("click", (e) => {
       body: JSON.stringify(x),
     })
       .then((data) => data.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        this.displaymsg();
+      });
   } else {
-    console.log(`/${requrl[requrl.length - 1]}`);
+    // console.log(`/${requrl[requrl.length - 1]}`);
     fetch(`/${requrl[requrl.length - 1]}`, {
       method: "POST",
       headers: {
@@ -98,7 +108,10 @@ save.addEventListener("click", (e) => {
       body: JSON.stringify(x),
     })
       .then((data) => data.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        this.displaymsg();
+      });
   }
 });
 

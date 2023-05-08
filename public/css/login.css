@@ -29,6 +29,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .login-image {
@@ -36,7 +37,9 @@
     height: 100vh;
     /* background-color: azure; */
     background-color: lightgreen;
-
+    /* background-image: url('../images/login3.png');
+    background-repeat: no-repeat;
+    background-size: contain; */
 }
 
 .login-input-container {
@@ -101,4 +104,13 @@ button {
 label {
     font-size: 20px;
     margin-top: 15px;
+}
+
+
+.login-absolute {
+    position: absolute;
+}
+
+.bg {
+    right: 0;
 }

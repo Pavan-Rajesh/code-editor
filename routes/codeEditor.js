@@ -89,6 +89,7 @@ router.post("/save", async (req, res) => {
         docModel: req.body.language,
       });
       savedCodes.save();
+      res.json("successfully saved");
       break;
 
     // python saving ends here php starts
@@ -110,6 +111,7 @@ router.post("/save", async (req, res) => {
         docModel: req.body.language,
       });
       allphp.save();
+      res.json("successfully saved");
       break;
     case "kotlin":
       const newKotlin = new kotlin({
@@ -128,6 +130,7 @@ router.post("/save", async (req, res) => {
         docModel: req.body.language,
       });
       allKotlin.save();
+      res.json("successfully saved");
       break;
     case "java":
       const newJava = new java({
@@ -146,6 +149,7 @@ router.post("/save", async (req, res) => {
         docModel: req.body.language,
       });
       alljava.save();
+      res.json("successfully saved");
       break;
     case "sql":
       const newSql = new sql({
@@ -165,6 +169,7 @@ router.post("/save", async (req, res) => {
         docModel: req.body.language,
       });
       allsql.save();
+      res.json("successfully saved");
       break;
     case "golang":
       const newgoLang = new golang({
@@ -183,6 +188,7 @@ router.post("/save", async (req, res) => {
         docModel: req.body.language,
       });
       allgolang.save();
+      res.json("successfully saved");
       break;
     case "csharp":
       const newcSharp = new csharp({
@@ -201,6 +207,7 @@ router.post("/save", async (req, res) => {
         docModel: req.body.language,
       });
       allcsharp.save();
+      res.json("successfully saved");
       break;
   }
 });

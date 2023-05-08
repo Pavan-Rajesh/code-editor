@@ -7,9 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>userCodes</title>
     <link rel="stylesheet" href="css/userCode.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <nav>
+        <ul>
+            <li>
+                <img src="./images/favicon.ico" alt="logo" class="company-logo">
+                <span class="company-name">CodeCraft</span>
+            </li>
+
+        </ul>
+        <ul>
+            <li onclick="window.location.href='/login'">
+                Login
+            </li>
+            <li onclick="window.location.href='/register'">
+                signup
+            </li>
+            <li onclick="window.location.href='/blogs'">
+                viewBlogs
+            </li>
+
+        </ul>
+    </nav>
     <% for(let i=0;i<codes.length;i++){ %>
         <div class="container">
             <div class="name-of-code">

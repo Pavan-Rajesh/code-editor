@@ -48,7 +48,41 @@ router.get("/", isAuth, (req, res) => {
 //     }
 //   });
 // });
-router.post("/upvote", (req, res) => {
+
+router.post("/update", (req, res) => {
+  // console.log(req.body);
+  allCodes.find({ _id: req.body.codeid }).then((result) => {
+    res.json(result);
+  });
+});
+
+router.post("/upvote", async (req, res) => {
+  const document = await allCodes.aggregate([
+    {
+      $match: { _id: new mongoose.Types.ObjectId(req.body.codeid) },
+    },
+    {
+      $match: {
+        dislikedIds: new mongoose.Types.ObjectId(req.user._id),
+      },
+    },
+  ]);
+  if (document.length > 0) {
+    allCodes
+      .updateOne(
+        { _id: req.body.codeid },
+        {
+          $pull: { dislikedIds: req.user._id },
+          $inc: { downvotes: -1 },
+        },
+        {
+          multi: true,
+        }
+      )
+      .then((data) => {
+        // console.log(data);
+      });
+  }
   allCodes
     .aggregate([
       {
@@ -69,7 +103,7 @@ router.post("/upvote", (req, res) => {
             { $inc: { upvotes: 1 }, $push: { likedIds: req.user._id } }
           )
           .then((data) => {
-            res.json("upvoted successfully");
+            // console.log(data);
           })
           .catch((err) => {
             console.log(err);
@@ -79,7 +113,34 @@ router.post("/upvote", (req, res) => {
       }
     });
 });
-router.post("/downvote", (req, res) => {
+router.post("/downvote", async (req, res) => {
+  const document = await allCodes.aggregate([
+    {
+      $match: { _id: new mongoose.Types.ObjectId(req.body.codeid) },
+    },
+    {
+      $match: {
+        likedIds: new mongoose.Types.ObjectId(req.user._id),
+      },
+    },
+  ]);
+  if (document.length > 0) {
+    allCodes
+      .updateOne(
+        { _id: req.body.codeid },
+        {
+          $pull: { likedIds: req.user._id },
+          $inc: { upvotes: -1 },
+        },
+        {
+          multi: true,
+        }
+      )
+      .then((data) => {
+        console.log(data);
+      });
+  }
+
   allCodes
     .aggregate([
       {
