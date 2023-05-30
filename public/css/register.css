@@ -102,3 +102,36 @@ label {
     font-size: 20px;
 
 }
+
+
+@media screen and (max-width:1175px) and (min-width:100px) {
+    .register-image {
+        display: none;
+    }
+
+    .register-details-wrapper {
+        width: 100vw;
+        height: auto
+    }
+
+    .input-field-container {
+        margin: 20px;
+    }
+
+    .company-banner-container {
+        height: 0%
+    }
+
+    .company-name {
+        font-size: 40px;
+        margin: 50px
+    }
+
+    .register-input-container {
+        width: auto;
+    }
+
+    input {
+        width: 150px
+    }
+}

@@ -4,6 +4,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
+// require(process.env.config);
 //------connecting to mongodb server
 mongoose
   .connect("mongodb://127.0.0.1:27017/codeEditor")

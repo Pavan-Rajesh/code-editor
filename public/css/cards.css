@@ -147,13 +147,14 @@ nav ul li:hover {
     height: 60%;
     /* background-color: blue; */
     border-radius: inherit;
-    font-family: 'DynaPuff', cursive;
+    font-family: sans-serif;
     padding: 10px;
     color: black;
     font-size: 25px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    font-weight: bold;
 }
 
 .actions {
