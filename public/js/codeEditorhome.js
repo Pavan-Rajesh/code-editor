@@ -1,5 +1,6 @@
 const aceLanguage = "ace/mode/";
 const aceTheme = "ace/theme/";
+
 //requiring the buttons for setting the editor
 const settings = document.getElementById("settings-toggler");
 const settingsOpener = document.getElementById("settings");
@@ -31,11 +32,11 @@ editor.setOptions({
 editor.setTheme(`${aceTheme}` + "chaos");
 //configuring the editor with the user needs
 configure.addEventListener("click", (e) => {
-  console.log(theme.value);
-  console.log(language.value);
+  // console.log(theme.value);
+  // console.log(language.value);
   editor.setTheme(`${aceTheme}` + theme.value);
   editor.session.setMode(`${aceLanguage}` + language.value);
-  console.log(fontSize.value);
+  // console.log(fontSize.value);
   editor.setFontSize(parseInt(fontSize.value));
   settingsOpener.style.display = "none";
 });
@@ -43,6 +44,13 @@ configure.addEventListener("click", (e) => {
 language.addEventListener("change", (e) => {
   editor.session.setMode(`${aceLanguage}` + e.target.value);
 });
+function displaymsg() {
+  iziToast.show({
+    title: "success",
+    message: "successfully saved",
+    backgroundColor: "#99ff99",
+  });
+}
 
 compile.addEventListener("click", (e) => {
   const usercode = editor.getSession().getValue();
@@ -77,7 +85,7 @@ save.addEventListener("click", (e) => {
   };
   const url = window.location.href;
   const requrl = url.split("/");
-  console.log(requrl[requrl.length - 1]);
+  // console.log(requrl[requrl.length - 1]);
   if (requrl[requrl.length - 1] == "letscode") {
     fetch("/letscode/save", {
       method: "POST",
@@ -87,9 +95,11 @@ save.addEventListener("click", (e) => {
       body: JSON.stringify(x),
     })
       .then((data) => data.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        this.displaymsg();
+      });
   } else {
-    console.log(`/${requrl[requrl.length - 1]}`);
+    // console.log(`/${requrl[requrl.length - 1]}`);
     fetch(`/${requrl[requrl.length - 1]}`, {
       method: "POST",
       headers: {
@@ -98,7 +108,10 @@ save.addEventListener("click", (e) => {
       body: JSON.stringify(x),
     })
       .then((data) => data.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        this.displaymsg();
+      });
   }
 });
 
@@ -108,8 +121,22 @@ logOutButton.addEventListener("click", (e) => {
 });
 
 markedText.addEventListener("input", (e) => {
+  // console.log("writing");
+  write();
+});
+
+function write() {
   outputMarkdownArea.innerHTML = "";
   const html = marked.parse(markedText.value);
   outputMarkdownArea.innerHTML = html;
-  console.log("writing");
-});
+}
+
+if (window.location.pathname == "/view") {
+  editor.setReadOnly(true);
+  markedText.setAttribute("readonly", "true");
+  write();
+}
+
+if (window.location.pathname == "/edit") {
+  write();
+}

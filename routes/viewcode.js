@@ -1,18 +1,19 @@
 const express = require("express");
 const router = express.Router();
 const allCodes = require("../models/allCodes");
-const python = require("../models/python");
 router.get("/", (req, res) => {
-  const userId = req.user._id;
-  // console.log(userId);
   allCodes
-    .find({ userId: req.user._id })
+    .find({ _id: req.query.id })
     .populate("code")
-    // .find({ author: userId })
     .then((data) => {
-      // console.log(data);
-      res.render("userCode", {
-        codes: data,
+      //   console.log(data);
+      const savedData = {
+        code: data[0].code.code,
+        markDown: data[0].code.markDown,
+        name: data[0].code.nameOfthecode,
+      };
+      res.render("codeEditorhome", {
+        data: savedData,
       });
     })
     .catch((err) => {

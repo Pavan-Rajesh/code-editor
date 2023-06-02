@@ -29,6 +29,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .login-image {
@@ -36,7 +37,9 @@
     height: 100vh;
     /* background-color: azure; */
     background-color: lightgreen;
-
+    /* background-image: url('../images/login3.png');
+    background-repeat: no-repeat;
+    background-size: contain; */
 }
 
 .login-input-container {
@@ -101,4 +104,36 @@ button {
 label {
     font-size: 20px;
     margin-top: 15px;
+}
+
+
+.login-absolute {
+    position: absolute;
+}
+
+.bg {
+    right: 0;
+}
+
+@media screen and (max-width:1060px) and (min-width:100px) {
+    .login-image {
+        display: none;
+    }
+
+    .login-details-wrapper {
+        width: 100vw;
+    }
+
+
+    .company-banner-container {
+        height: 0%
+    }
+
+    .company-name {
+        font-size: 40px;
+    }
+
+    input {
+        width: 150px
+    }
 }

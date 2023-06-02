@@ -7,25 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>userCodes</title>
     <link rel="stylesheet" href="css/userCode.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <nav>
+        <ul>
+            <li>
+                <img src="./images/favicon.ico" alt="logo" class="company-logo">
+                <span class="company-name">CodeCraft</span>
+            </li>
+
+        </ul>
+        <ul>
+            <li onclick="window.location.href='/login'">
+                Login
+            </li>
+            <li onclick="window.location.href='/register'">
+                signup
+            </li>
+            <li onclick="window.location.href='/blogs'">
+                viewBlogs
+            </li>
+
+        </ul>
+    </nav>
     <% for(let i=0;i<codes.length;i++){ %>
         <div class="container">
             <div class="name-of-code">
                 <h3>
-                    <%=codes[i].nameOfthecode %>
+                    <%=codes[i].code.nameOfthecode %>
                 </h3>
             </div>
             <div>
-                <%= codes[i].code%>
+
             </div>
 
             <div class="edit-button">
-                <button type="button" data-id="<%=codes[i]._id%>" onclick="changeCode(this)">Edit</button>
+                <button type="button" data-id="<%=codes[i].code._id%>" data-language="<%=codes[i].code.language%>"
+                    onclick="changeCode(this)">Edit</button>
+                <button type="button" data-id="<%=codes[i].code._id%>" data-language="<%=codes[i].code.language%>"
+                    id="delete" onclick="deleteCode(this)">delete</button>
             </div>
-            <% }%>
-                <script src="js/userCodeJS.js"></script>
+        </div>
+        <% }%>
+            <script src="js/userCodeJS.js"></script>
 </body>
 
 </html>

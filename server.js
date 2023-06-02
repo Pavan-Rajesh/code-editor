@@ -4,9 +4,10 @@ const path = require("path");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
+require("dotenv").config();
 //------connecting to mongodb server
 mongoose
-  .connect("mongodb://127.0.0.1:27017/codeEditor")
+  .connect(process.env.MONGODBURI)
   .then(() => {
     console.log("successfully connected");
   })
@@ -31,6 +32,10 @@ const invalidLogin = require("./routes/wrongPassword");
 const userCodes = require("./routes/userCodes");
 //edit route
 const edit = require("./routes/edit");
+//delete route
+const deleteCode = require("./routes/delete");
+//view code route
+const viewCode = require("./routes/viewcode");
 // -------------------------------------------- end of routes
 
 const app = express();
@@ -79,10 +84,12 @@ app.use("/logout", logout);
 app.use("/wrongPassword", invalidLogin);
 app.use("/usercodes", userCodes);
 app.use("/edit", edit);
+app.use("/delete", deleteCode);
+app.use("/view", viewCode);
 //base routes ---------------------------------------------------------------- that means these routes will be preced by the double quoted strings in the above ones
 
 // listening on port
-app.listen(3000, (err) => {
+app.listen(process.env.PORT || 3000, (err) => {
   if (err) throw err;
   console.log("listening on port 3000");
 });

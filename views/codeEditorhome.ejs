@@ -9,6 +9,8 @@
     <link href="https://fonts.cdnfonts.com/css/terminal" rel="stylesheet">
     <link rel="stylesheet" href="css/codeEditorhome.css">
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="js/iziToast-master/dist/css/iziToast.min.css">
+    <script src="js/iziToast-master/dist/js/iziToast.min.js"></script>
 </head>
 
 <body>
@@ -22,6 +24,8 @@
 
         </ul>
         <ul>
+            <li onclick="window.location.href='/blogs'">view Blogs</li>
+            <li onclick="window.location.href='/usercodes'">my codes</li>
             <li>Editor</li>
         </ul>
     </nav>
@@ -48,9 +52,9 @@
                 </select>
             </div>
             <div class="code-name">
-                Name of the code: <input type="text" name="codeName" id="codeName">
+                Name of the code: <input value="<%=data.name%>" type="text" name="codeName" id="codeName">
             </div>
-            <!-- ---------------------------------------- -->
+            <!-- ------------------------------------------>
             <div id="settings-toggler">Settings</div>
             <div id="settings">
 
@@ -117,7 +121,7 @@
         </div>
     </div>
     <div class="question-container">
-        <div class="question">
+        <!-- <div class="question">
             llitia ipsum, dignissimos voluptatibus facere maiores dolorum,
             vero accusamus repellat vel placeat? Reprehenderit aspernatur inventore explicabo similique, officiis ad
             cupiditate commodi cumque!
@@ -187,7 +191,7 @@
             ea
             unde voluptatibus nisi inventore eligendi iste adipisci accusantium non nostrum similique. Id, deleniti
             doloribus.
-        </div>
+        </div> -->
     </div>
     <script src="js/ace-builds-master/src-noconflict/ace.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>

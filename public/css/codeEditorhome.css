@@ -276,3 +276,9 @@ button:active {
 #output {
     color: white
 }
+
+@media screen and (max-width:1060px) and (min-width:100px) {
+    .editor-markdown {
+        flex-direction: column;
+    }
+}
