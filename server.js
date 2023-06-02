@@ -4,7 +4,14 @@ const path = require("path");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
+const client = require("@mailchimp/mailchimp_marketing");
+
 require("dotenv").config();
+
+client.setConfig({
+  apiKey: process.env.APIKEY,
+  server: "us17",
+});
 //------connecting to mongodb server
 mongoose
   .connect(process.env.MONGODBURI)
@@ -86,6 +93,13 @@ app.use("/usercodes", userCodes);
 app.use("/edit", edit);
 app.use("/delete", deleteCode);
 app.use("/view", viewCode);
+app.post("/addemail", async (req, res) => {
+  const response = await client.lists.addListMember("701079c3ce", {
+    email_address: req.body.email,
+    status: "subscribed",
+  });
+  // console.log(response);
+});
 //base routes ---------------------------------------------------------------- that means these routes will be preced by the double quoted strings in the above ones
 
 // listening on port
