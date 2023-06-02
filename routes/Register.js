@@ -30,7 +30,7 @@ router.post("/", (req, res) => {
   });
 
   newUser.save().then((user) => {
-    console.log(user);
+    // console.log(user);
   });
 
   res.redirect("/login");

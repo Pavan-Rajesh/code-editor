@@ -4,10 +4,10 @@ const path = require("path");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
-// require(process.env.config);
+require("dotenv").config();
 //------connecting to mongodb server
 mongoose
-  .connect("mongodb://127.0.0.1:27017/codeEditor")
+  .connect(process.env.MONGODBURI)
   .then(() => {
     console.log("successfully connected");
   })
@@ -89,7 +89,7 @@ app.use("/view", viewCode);
 //base routes ---------------------------------------------------------------- that means these routes will be preced by the double quoted strings in the above ones
 
 // listening on port
-app.listen(3000, (err) => {
+app.listen(process.env.PORT || 3000, (err) => {
   if (err) throw err;
   console.log("listening on port 3000");
 });

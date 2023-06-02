@@ -33,7 +33,7 @@ router.get("/", isAuth, (req, res) => {
 router.post("/", (req, res) => {
   const language = req.body.language;
   const code = req.body.code;
-  console.log(languagesJson[language]);
+  // console.log(languagesJson[language]);
   // only 200 requests are allowed for a free tier
 
   const program = {
